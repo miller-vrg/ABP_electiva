@@ -12,21 +12,22 @@
 </head>
 <body>
     <nav>
-        <div class="usuario">
-            <img src="../icons/usuario.png" alt="Usuario">
-            <p>Nombre usuario</p>
-        </div>
-        <div class="calendario">
-            <button> <p> Citas</p></button>
+        <div class="btn-nav">
+             <img class="calendario" src="../icons/calendario.png" onclick="location='citas.html'" >
+             <img class="registros" src="../icons/verificacion.png" onclick="print()" >
         </div>
     </nav>
     <section class="container">
         <div class="tarjetero1">
-            <div class="tarjeta t1" >
-                <img src="../img/vacuna.jpg" alt="COVID-19">
-                <h2>COVID-19</h2>
-                <p>Las vacunas contra el COVID-19 son efectivas y pueden reducir su riesgo de infectarse y propagar el virus que causa el COVID-19. Las vacunas contra el COVID-19 también ayudan a evitar cuadros graves de la enfermedad e incluso la muerte en niños y adultos aunque se infecten por el
-                </p>
+            <div class="card-user" >
+                <img class="user" src="../icons/usuario.png" alt="PERFIL">
+                <h3>user name</h3>
+                <div class="datos">
+                    <p>Edad: </p>
+                    <p>Email: </p>
+                    <p>Telefono: </p>
+                </div>
+                <button class="btn-editar" onclick="location='edit.html'">Editar</button>
             </div>
             </div>
             <div class="tarjetero2">
@@ -34,27 +35,26 @@
                     <img src="../img/general.jpg" alt="Medico General">
                     <h5>Medico general</h5>
                     <p>El médico general tiene la responsabilidad de ofrecer una atención integral al paciente. Esto hace que tenga un total conocimiento del historial médico y clínico del paciente.</p>
-                    <button><h5>Agregar</h5> <img src="../icons/fecha-derecha.svg" alt="flecha"></button>
+                    <button onclick="location='listado.html'"><h5>Agregar</h5> <img src="../icons/fecha-derecha.svg" alt="flecha"></button>
 
                 </div>
                 <div class="tarjeta t2">
                     <img src="../img/ginecologo.jpg" alt="Ginecologo">
                     <h5>Ginecologia</h5>
                     <p>La finalidad de la revisión ginecológica es la prevención y detección precoz de alteraciones de los órganos reproductores.</p>
-                    <button><h5>Agregar</h5><img src="../icons/fecha-derecha.svg" alt="flecha"></button>
+                    <button onclick="location='listado.html'" ><h5>Agregar</h5><img src="../icons/fecha-derecha.svg" alt="flecha"></button>
                 </div>
                 <div class="tarjeta t2">
                     <img src="../img/pediatria.jpg" alt="Pediatria">
                     <h5>Pediatria</h5>
                     <p>Ofrecer consejos para evitar enfermedades y lesiones. Proporcionar cuidado anticipado y adecuado en caso de enfermedades graves para evitar que progresen.</p>
-                    <button><h5>Agregar</h5> <img src="../icons/fecha-derecha.svg" alt="flecha"></button>
+                    <button onclick="location='listado.html'" ><h5>Agregar</h5> <img src="../icons/fecha-derecha.svg" alt="flecha"></button>
                 </div>
                 <div class="tarjeta t2 t3" >
                     <img src="../img/odontologia.jpg" alt="Odontologia">
                     <h5>Odontologia</h2>
                     <p>La odontologia es la mejor manera de que tus dientes y tu boca se mantengan sanos con el paso de los años, y de que además, evites enfermedades causadas por una mala higiene bucodental.</p>
-
-                    <button><h5>Agregar</h5> <img src="../icons/fecha-derecha.svg" alt="flecha"></button>
+                    <button onclick="location='listado.html'" ><h5>Agregar</h5> <img src="../icons/fecha-derecha.svg" alt="flecha"></button>
                 </div>
             </div>
         </div>
