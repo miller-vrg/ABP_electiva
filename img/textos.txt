@@ -1,0 +1,17 @@
+COVID-19
+Las vacunas contra el COVID-19 son efectivas y pueden reducir su riesgo de infectarse y propagar el virus que causa el COVID-19. Las vacunas contra el COVID-19 también ayudan a evitar cuadros graves de la enfermedad e incluso la muerte en niños y adultos aunque se infecten por el COVID-19.
+
+Medico general
+El médico general tiene la responsabilidad de ofrecer una atención integral al paciente. Esto hace que tenga un total conocimiento del historial médico y clínico del paciente.
+
+Ginecologia
+La finalidad de la revisión ginecológica es la prevención y detección precoz de alteraciones de los órganos reproductores.
+
+Pediatria
+Ofrecer consejos para evitar enfermedades y lesiones. Proporcionar cuidado anticipado y adecuado en caso de enfermedades graves para evitar que progresen.
+
+Odontologia
+La odontologia es la mejor manera de que tus dientes y tu boca se mantengan sanos con el paso de los años, y de que además, evites enfermedades causadas por una mala higiene bucodental.
+
+--color-primario: #2E85E6;
+--color-1-boton: #0039BC;
