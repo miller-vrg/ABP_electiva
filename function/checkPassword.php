@@ -21,7 +21,7 @@ if(mysqli_num_rows($rows) > 0 ){
         $_SESSION['edad'] = $data['edad'];
         $_SESSION['email'] = $data['email'];
         $_SESSION['telefono'] = $data['telefono'];
-
+        $_SESSION['direccion'] = $data['direccion'];
         }
 
     header("location: ../page/home-usuario.php");
