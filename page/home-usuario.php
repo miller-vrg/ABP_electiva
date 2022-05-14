@@ -1,3 +1,13 @@
+<?php
+session_start();
+$name = $_SESSION['name'];
+$edad = $_SESSION['edad'];
+$email = $_SESSION['email'];
+$telefono = $_SESSION['telefono'];
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,11 +31,11 @@
         <div class="tarjetero1">
             <div class="card-user" >
                 <img class="user" src="../icons/usuario.png" alt="PERFIL">
-                <h3>user name</h3>
+                <h3><?= $name ?></h3>
                 <div class="datos">
-                    <p>Edad: </p>
-                    <p>Email: </p>
-                    <p>Telefono: </p>
+                    <p>Edad: <?= $edad?></p>
+                    <p>Email: <?= $email?></p>
+                    <p>Telefono: <?= $telefono?></p>
                 </div>
                 <button class="btn-editar" onclick="location='edit.html'">Editar</button>
             </div>

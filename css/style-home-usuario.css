@@ -13,7 +13,7 @@ body{
     align-content: center;
     background-size: cover;
     background-repeat: no-repeat;
-    background-image: url(/img/fondo-2.jpg);
+    background-image: url(../img/fondo-2.jpg);
     background-position: 50% 50%;
 }
 
@@ -72,7 +72,7 @@ nav{
 }
 
 .card-user{
-
+    margin:0;
     width:60%;
     height:35vh;
     background: var(--fondo);
@@ -88,8 +88,7 @@ nav{
 
 .card-user img{
     margin:0;
-    padding:2%;
-    width:40%;
+    width:50%;
     display:flex;
     flex-direction: column;
     overflow:hidden;
@@ -97,7 +96,6 @@ nav{
 
 .datos{
     margin:0;
-    padding-left: 10%;
     align-self: flex-start;
 }
 
@@ -188,7 +186,6 @@ nav{
     justify-content: space-between;
 }
 
-
 .t2  button{
     margin:0;
     width:100%;
@@ -260,15 +257,17 @@ nav{
         height:100%;
     }
 
-
     .card-user img{
-        margin-top: 10%;
-        width:60%;
+       margin:0;
+       margin-top:10%;
     }
 
     .datos p {
         margin:0;
-        padding:20%;
+        text-align: left;
+        margin:0;
+        margin-top: 10%;
+        margin-left:20%;
     }
     
     .btn-editar{

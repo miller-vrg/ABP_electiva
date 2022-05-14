@@ -1,0 +1,152 @@
+
+:root{
+    --color-primary: #0099ff;
+}
+body{
+    font-family: 'Quicksand', sans-serif;
+    width:100%;
+    height:120vh;
+    margin:0 auto;
+    display: grid;
+    place-items: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url(../img/fondo-2.jpg);
+    background-position: 50% 50%;
+}
+
+.padre{
+    margin:0;
+    width: 90%;
+    height:100%;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+}
+
+.card-user{
+    width:23%;
+    height:70%;
+    background: rgba(255, 255, 255, 0.8);
+    border:1px solid var(--color-primary);
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    border:none;
+    border-radius: 12px;
+    box-shadow: 0 0 10px #00bdff;
+    overflow:hidden;
+
+}
+
+.card-user img{
+    margin:0;
+    margin-top:20%;
+    width:40%;
+    display:flex;
+    flex-direction: column;
+    overflow:hidden;
+}
+
+.card-user input{
+    margin:0;
+    width: 30vh;
+    height: 35%;
+    border-radius:6px;
+}
+
+.btn-editar{
+    margin:0;
+    margin-top:20%;
+    width:73%;
+    height:6%;
+    font-weight: bold;
+    border: none;
+    border:none;
+    border-radius:8px;
+    background:var(--color-primary);
+    overflow:hidden;
+}
+
+
+.table{
+    margin: 0;
+    margin-left: 5%;
+    white:100vh;
+    height:70%;
+    display: flex;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 0 10px #00bdff;
+    overflow:auto;
+
+}
+
+.table button{
+    margin:0;
+    border:none;
+    background: rgba(255, 255, 255, 0.8);
+}
+
+.table button:hover{
+    border-radius: 50%;
+    box-shadow: 0 0 10px #00bdff;
+}
+
+.default {
+    margin:0;
+    padding:2%;
+    width:110vh;
+    height:100%;
+    overflow: hidden;
+}
+
+
+.columns{
+    background: #00bdff;
+    border: solid #00bdff;
+    height:5%;
+}
+
+td{
+    margin: 0;
+    padding: 0;
+    border: solid 1px #00bdff;
+}
+
+#btns{
+    margin:0;
+    white:12px;
+    border:none;
+}
+
+ion-icon{
+    cursor: pointer;
+}
+
+
+.btn-registrar{
+    margin:0;
+    border:none;
+    border-radius: 8px;
+    background:var(--color-primary);
+    width: 100%;
+    height:30%;
+}
+
+
+.btn-registrar:hover{
+    border:1px solid var(--color-primary);
+    background:#ffffff;
+    color:var(--color-primary);
+    font-weight: bold;
+}
+
+
+@media (max-width: 600px){
+
+    .padre{
+        display: flex;
+        flex-direction: column;
+    }
+}

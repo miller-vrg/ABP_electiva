@@ -13,7 +13,7 @@ body{
     place-items: center;
     background-size: cover;
     background-repeat: no-repeat;
-    background-image: url(/img/fondo-2.jpg);
+    background-image: url(../img/fondo-2.jpg);
     background-position: 50% 50%;
 }
 
