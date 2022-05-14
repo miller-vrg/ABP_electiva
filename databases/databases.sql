@@ -1,6 +1,8 @@
 -- abp_requerimientos.citas definition
 CREATE DATABASES abp_requerimientos;
 
+USE abp_requerimientos;
+
 -- abp_requerimientos.usuarios definition
 
 CREATE TABLE `usuarios` (
