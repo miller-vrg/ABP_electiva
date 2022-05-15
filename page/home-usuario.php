@@ -33,7 +33,7 @@ $direccion = $_SESSION['direccion'];
         <div class="tarjetero1">
             <form action="./edit.php" method="post" class="card-user" >
                 <img class="user" src="../icons/usuario.png" alt="PERFIL">
-                <h2><?= $name ?></h2>
+                <h3><?= $name ?></h3>
 
                 <div class="datos">
                     <p><b>Edad:</b> <br><?= $edad?></p>
@@ -50,7 +50,6 @@ $direccion = $_SESSION['direccion'];
                     <h5>Medico general</h5>
                     <p>El médico general tiene la responsabilidad de ofrecer una atención integral al paciente. Esto hace que tenga un total conocimiento del historial médico y clínico del paciente.</p>
                     <button type="submit" name="accion" value="general"><h5>Agendar</h5> <img src="../icons/fecha-derecha.svg" alt="flecha"></button>
-
                 </div>
                 <div class="tarjeta t2">
                     <img src="../img/ginecologo.jpg" alt="Ginecologo">
