@@ -19,9 +19,9 @@
             <form action="./function/checkPassword.php" method="post" class="datos">
                     <div class="texto">
                         <p class="p1">Usuario:</p>
-                        <input class="campos" name="user" type="text" placeholder="juan-123" required>
+                        <input class="campos" name="user" type="text" placeholder="Ejemplo: juan-123" minlength="5" maxlength="10" required>
                         <p class="p1">Contraseña:</p>
-                        <input class="campos" name="password" type="password" placeholder="*****" required>
+                        <input class="campos" name="password" type="password" placeholder="*****" minlength="8" maxlength="16" required>
                     </div>
                     <div class="botones">
                         <button  class="btn-registro" onclick= "location = './page/registrar-usuario.html'"><p>Registro</p></button>

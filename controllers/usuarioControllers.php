@@ -8,6 +8,13 @@ $telefono = $_REQUEST['telefono'];
 $direccion = $_REQUEST['direccion'];
 $email = $_REQUEST['email'];
 
+echo "<script>
+  var r = confirm('desea guardar los cambios?');
+  if( r == false){
+    location = '../page/edit.php';
+  }
+  </script>";
+
   $sql = "UPDATE $tipo
           SET telefono = '$telefono',
           direccion = '$direccion',

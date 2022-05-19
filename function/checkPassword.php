@@ -45,7 +45,7 @@ if(mysqli_num_rows($rows) > 0 ){
         header("location: ../page/mostrar-datos-doctor.php");
     }else{
              echo "<script>
-                 alert('Usuario o contraseña invalido existe');
+                 alert('Usuario o contraseña invalido');
                  location = '../index.html';
               </script>";
     }

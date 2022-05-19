@@ -10,7 +10,7 @@ $direccion = $_SESSION['direccion'];
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -29,11 +29,14 @@ $direccion = $_SESSION['direccion'];
                         <p id="subtitle">Telefono:</p>
                         <input class="campos" name="telefono" min="30000000" max="3499999999" type="number" value="<?=$telefono?>" required>
                         <p id="subtitle">Email: </p>
-                        <input class="campos" name="email" type="text" value="<?=$email?>" required>
+                        <input class="campos" id="email" name="email" type="text" value="<?=$email?>" required>
                         <p id="subtitle">Dirección: </p>
                         <input class="campos" name="direccion" type="text" value="<?=$direccion?>" required>
                     </div>
-                    <button class="btn-editar" type="submit">Guadar</button>
+                    <button class="btn-editar" id="editar" type="submit">Guadar</button>
             </form>
+            <script src="../js/function.js">
+
+            </script>
 </body>
 </html>
