@@ -1,6 +1,11 @@
 <?php
 session_start();
 $tipo = $_SESSION['tipo'];
+
+if($tipo == null){
+    header("location: ../");
+}
+
 $name = $_SESSION['name'];
 $edad = $_SESSION['edad'];
 $email = $_SESSION['email'];

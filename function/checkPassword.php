@@ -12,7 +12,7 @@ and password = '$password';";
 $rows = mysqli_query($conexion,$sql);
 
 if(mysqli_num_rows($rows) > 0 ){
-    $_SESSION['tipo'] = "usuario";
+    $_SESSION['tipo'] = "usuarios";
 
     while($data = mysqli_fetch_assoc($rows)){
 
@@ -34,7 +34,7 @@ if(mysqli_num_rows($rows) > 0 ){
     $rows = mysqli_query($conexion,$sql);
         
     if(mysqli_num_rows($rows) > 0 ){
-        $_SESSION['tipo'] = "Docente";
+        $_SESSION['tipo'] = "medicos";
         while($data = mysqli_fetch_assoc($rows)){
     
             $_SESSION['user'] = $user;
