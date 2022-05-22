@@ -49,7 +49,7 @@ $direccion = $_SESSION['direccion'];
                 <button class="btn-editar" type="submit">Editar</button>
             </form>
             </div>
-            <form action="./listado.html" method="post" class="tarjetero2">
+            <form action="../function/datoMedico.php" method="post" class="tarjetero2">
                 <div class="tarjeta t2">
                     <img src="../img/general.jpg" alt="Medico General">
                     <h5>Medico general</h5>
@@ -66,7 +66,7 @@ $direccion = $_SESSION['direccion'];
                     <img src="../img/pediatria.jpg" alt="Pediatria">
                     <h5>Pediatria</h5>
                     <p>Ofrecer consejos para evitar enfermedades y lesiones. Proporcionar cuidado anticipado y adecuado en caso de enfermedades graves para evitar que progresen.</p>
-                    <button type="submit" name="accion" value="pediatria" ><h5>Agendar</h5> <img src="../icons/fecha-derecha.svg" alt="flecha"></button>
+                    <button type="submit" name="accion" value="pediatra" ><h5>Agendar</h5> <img src="../icons/fecha-derecha.svg" alt="flecha"></button>
                 </div>
                 <div class="tarjeta t2" >
                     <img src="../img/odontologia.jpg" alt="Odontologia">
