@@ -11,10 +11,9 @@ $row = mysqli_query($conexion, $sql);
 @$data;
 if (@mysqli_num_rows($row) > 0) {
     $data = mysqli_fetch_assoc($row);
-
-    echo $data["apellidos"];
-    echo $data["name"];
-    echo $data["user"];
+    // echo $data["apellidos"];
+    // echo $data["name"];
+    // echo $data["user"];
 }
 
 // general
@@ -55,27 +54,11 @@ if (@mysqli_num_rows($row) > 0) {
 tt;
 
                 @$fecha = date("d-m-Y");
-                @$hora = date("6:0:0");
+                @$hora = date("5:40:0");
                 @$auxi = strtotime($hora);
                 
                 for ($i = 1; $i <= 36; $i++) {
                     
-                    if ($i == 1) {
-                        $hora = @date('H:i:s A',$auxi);
-                        echo <<<pp
-                        <tr>
-                            <th class="n">{$i}</th>
-                            <td>{$data["name"]} {$data["apellidos"]}</td>
-                            <td>{$fecha}</td>
-                            <td>{$hora}</td>
-                            <td class="btn">
-                            <a href="home-usuario.php" class="buton" type="submit" >
-                            <img src="../icons/agregar.png" alt="+">
-                            </a>
-                            </td>
-                        </tr>
-pp;
-                    } else {
                         @$auxi = strtotime('+20 minute', $auxi);
                         $hora = @date('H:i:s A',$auxi);
                         echo <<<pp
@@ -85,16 +68,12 @@ pp;
                             <td>{$fecha}</td>
                             <td>{$hora}</td>
                             <td class="btn">
-                            <a href="home-usuario.php" class="buton" type="submit" >
+                            <a href="../function/registrar_cita.php?f={$fecha}&h={$hora}&u={$data["user"]}" class="buton" type="submit" >
                             <img src="../icons/agregar.png" alt="+">
                             </a>
                             </td>
                         </tr>
 pp;
-                    }
-
-                    // echo $auxi."<br>";
-                    // echo @$fecha."----------------".date('H:i:s',$auxi)."<br>";
                 }
             } else {
                 echo "<H1>No hay medico " . $_SESSION['expecializacion'] . " disponible</H1>";
@@ -102,9 +81,8 @@ pp;
 
             ?>
 
-
+            <a href=''></a>
             <!--  -->
-
         </table>
     </form>
     <div class="dias">
