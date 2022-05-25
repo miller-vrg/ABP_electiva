@@ -52,15 +52,23 @@ if (@mysqli_num_rows($row) > 0) {
                     <td class="c b"></td>
                     </tr>
 tt;
-
+                date_default_timezone_set("America/Bogota");
                 @$fecha = date("d-m-Y");
                 @$hora = date("5:40:0");
                 @$auxi = strtotime($hora);
-                
+
+
+                @$hora_actual = date("H:i:s");
+                @$auxi2 =  strtotime($hora_actual);
+                $auxi2 = @strtotime("+2 hour", $auxi2);
+
                 for ($i = 1; $i <= 36; $i++) {
-                    
-                        @$auxi = strtotime('+20 minute', $auxi);
-                        $hora = @date('H:i:s A',$auxi);
+
+                    @$auxi = strtotime('+20 minute', $auxi);
+
+
+                    if ($auxi  > $auxi2) {
+                        $hora = @date('H:i:s A', $auxi);
                         echo <<<pp
                         <tr>
                             <th class="n">{$i}</th>
@@ -74,6 +82,7 @@ tt;
                             </td>
                         </tr>
 pp;
+                    }
                 }
             } else {
                 echo "<H1>No hay medico " . $_SESSION['expecializacion'] . " disponible</H1>";
@@ -81,7 +90,6 @@ pp;
 
             ?>
 
-            <a href=''></a>
             <!--  -->
         </table>
     </form>
