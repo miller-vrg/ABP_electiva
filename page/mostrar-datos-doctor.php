@@ -2,6 +2,7 @@
 session_start();
 require_once "../databases/conexion_db.php";
 
+$name = $_SESSION['name'];
 $espe = $_SESSION['especi'];
 $edad = $_SESSION['edad'];
 $telefono = $_SESSION['telefono'];
@@ -27,7 +28,7 @@ $telefono = $_SESSION['telefono'];
 
             <div class="card-user">
                 <img src="../icons/usuario.png" alt="">
-                <h3>Nombre del Doctor</h3>
+                <h3><?= $name ?></h3>
                     <div class="campo">
                         <p><b>Especializacíon:</b> <br>
                           <?= $espe?>
