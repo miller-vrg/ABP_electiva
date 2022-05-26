@@ -66,14 +66,14 @@ if(mysqli_num_rows($rows) > 0 ){
 </head>
 <body>
     <section class = "container">
-          <form action="">
-              <table>
+    <table BORDER CELLPADDING=10 CELLSPACING=0>
                   <tr>
-                      <th>N°</th>
-                      <th>Medico</th>
-                      <th>Tipo</th>
-                      <th>Hora cita</th>
-                      <th>Hora asignación</th>
+                      <th class="encabezado" id="n">N°</th>
+                      <th class="encabezado" id="medico">Medico</th>
+                      <th class="encabezado" id="tipo">Tipo</th>
+                      <th class="encabezado" id="estado">Estado</th>
+                      <th class="encabezado" id="hora">Fecha cita</th>
+                      <th class="encabezado" id="asignacion">Asignación</th>
                   </tr>
                   <?= llenar();?>
               </table>

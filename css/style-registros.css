@@ -12,6 +12,60 @@ body{
     place-items: center;
     background-size: cover;
     background-repeat: no-repeat;
-    background-image: url(../img/fondo-2.jpg);
     background-position: 50% 50%;
+}
+
+section{
+    margin:0;
+    width: 80%;
+    height: 90%;
+    background: rgba(255,255,255,0.5);
+    border-radius: 8px;
+}
+
+table{
+    margin:0;
+    width:100%;
+    text-align: left;
+    color:white;
+    border-radius: 8px;
+    border:none;
+    box-shadow: 0px 0px 5px var(--color-primary);
+}
+
+.encabezado{
+    margin:0;
+    border:none;
+    position: sticky;
+    top:0;
+    background: var(--color-secundario);
+}
+
+#n{
+    width: 5%;
+    border-top-left-radius: 8px;
+}
+
+#medico{
+    width: 30%;
+}
+
+#tipo,#estado{
+    width: 15%;
+}
+
+#asignacion{
+    width: 17.5%;
+    border-top-right-radius: 8px;
+}
+#hora{
+    width: 17.5%;
+}
+
+td{
+    margin:0;
+    color:var(--color-secundario);
+    border:none;
+    border-bottom: 1px solid var(--color-primary);
+    background: rgba(255,255,255,0.1);
 }
