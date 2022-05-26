@@ -6,6 +6,12 @@ if($tipo == null){
     header("location: ../");
 }
 
+if ( $tipo == "usuarios"){
+    $ruta = "../controllers/usuarioControllers.php";
+ }else{ 
+    $ruta = "../controllers/medicosControllers.php";
+ }
+ 
 $name = $_SESSION['name'];
 $edad = $_SESSION['edad'];
 $email = $_SESSION['email'];
@@ -27,7 +33,7 @@ $direccion = $_SESSION['direccion'];
     <link rel="stylesheet" href="../css/style-edit.css">
 </head>
 <body>
-            <form action="../controllers/usuarioControllers.php"  class="card-user" >
+            <form action="<?= $ruta ?>"  class="card-user" >
                     <img class="user" src="../icons/usuario.png" alt="PERFIL">
                     <p id="title"><?= $name?></p>
                     <div class="datos">

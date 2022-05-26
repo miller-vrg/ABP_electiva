@@ -2,16 +2,16 @@
 session_start();
 require_once "../databases/conexion_db.php";
 
-@$ex = $_SESSION['expecializacion'];
+@$ex = $_SESSION['especializacion'];
 
 $sql = "SELECT * FROM medicos
-WHERE lower(expecializacion)  like '%$ex%'";
+WHERE lower(especializacion)  like '%$ex%'";
 
 $row = mysqli_query($conexion, $sql);
-@$data;
-if (@mysqli_num_rows($row) > 0) {
+
+if (mysqli_num_rows($row) > 0) {
     $data = mysqli_fetch_assoc($row);
-    // echo $data["apellidos"];
+     echo $data["apellidos"];
     // echo $data["name"];
     // echo $data["user"];
 }

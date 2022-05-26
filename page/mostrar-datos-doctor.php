@@ -1,5 +1,15 @@
+<?php
+session_start();
+require_once "../databases/conexion_db.php";
+
+$espe = $_SESSION['especi'];
+$edad = $_SESSION['edad'];
+$telefono = $_SESSION['telefono'];
+
+?>
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,14 +28,16 @@
             <div class="card-user">
                 <img src="../icons/usuario.png" alt="">
                 <h3>Nombre del Doctor</h3>
-
                     <div class="campo">
-                        <p>Especializacíon</p>
-                         <input type="text"> </input>
-                        <p>Edad</p>
-                         <input type="text"> </input>
-                        <p>Telefono</p>
-                         <input type="text"> </input>
+                        <p><b>Especializacíon:</b> <br>
+                          <?= $espe?>
+                          </p>
+                        <p><b>Edad:</b> <br>
+                        <?= $edad?>
+                        </p>
+                        <p><b>Telefono:</b> <br>
+                        <?= $telefono?>
+                      </p>
               </div>
               <button class="btn-editar" onclick="location='./edit.php'"> Editar </button>
             </div>

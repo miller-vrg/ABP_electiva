@@ -38,8 +38,12 @@ if(mysqli_num_rows($rows) > 0 ){
         while($data = mysqli_fetch_assoc($rows)){
     
             $_SESSION['user'] = $user;
-            echo $data['name']." ".$data['apellidos'];
             $_SESSION['name'] = $data['name']." ".$data['apellidos'];
+            $_SESSION['edad'] = $data['edad'];
+            $_SESSION['email'] = $data['email'];
+            $_SESSION['telefono'] = $data['telefono'];
+            $_SESSION['direccion'] = $data['direccion'];
+            $_SESSION['especi'] = $data['especializacion'];
             }
     
         header("location: ../page/mostrar-datos-doctor.php");
