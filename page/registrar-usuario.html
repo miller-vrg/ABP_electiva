@@ -11,39 +11,72 @@
 <link rel="stylesheet" href="../css/style-registrar-usuario.css">
 </head>
 <body>
+    <form action="/ABP_requeriminto/controllers/registroController.php">
     <section class="container">
 
 
 
-        <div class="todo">
-            <div class="img">
+       
+            
                 <img src="../img/login.png" alt="enfermera">
-            </div>
-                    <div class="texto1">
-                        <p class="p1">Nombre: *</p>
-                        <input class="campos" type="text" required>
-                        <p class="p1">Apellidos: *</p>
-                        <input class="campos" type="text"  required>
-                        <p class="p1">Telefono: *</p>
-                        <input class="campos" type="number"  required>
-                        <p class="p1">Cedula: *</p>
-                        <input class="campos" type="text"  required>
+            
+
+
+                  <div class="form">
+                    <div class="campos">
+                        
+                        <div class="campo">
+                            <p class="p1">Nombre: *</p>
+                            <input name="name" class="campos" type="text" required>
+                        </div>
+                        
+                        <div class="campo">
+                            <p class="p1">Apellidos: *</p>
+                            <input name="apellidos" class="campos" type="text"  required>
+                        </div>
+                                                
+                        <div class="campo">
+                            <p class="p1">Edad: *</p>
+                            <input name="edad" class="campos" type="number"  required>
+                        </div>
+                        
+                        <div class="campo">
+                            <p class="p1">Telefono: *</p>
+                            <input name="telefono" class="campos" type="number"  required>
+                        </div>
+                        
+                        <div class="campo">
+                            <p class="p1">Cedula: *</p>
+                            <input name="cc" class="campos" type="text"  required>
+                        </div>
+                                                
+                        <div class="campo">
+                            <p class="p1">Emial: *</p>
+                            <input name="email" class="campos" type="email"  required>
+                        </div>
+
+                        <div class="campo">
+                            <p class="p1">Direccion: *</p>
+                            <input name="direccion" class="campos" type="text" required>
+                        </div>
+
+                        <div class="campo">
+                            <p class="p1">Usuario: *</p>
+                            <input name="user" class="campos" type="text"  required>
+                        </div>
+
+                        <div class="campo">
+                            <p class="p1">Contraseña: *</p>
+                            <input name="password" class="campos"  name="password" type="password" placeholder="*****" minlength="8" maxlength="16" required>
+                        </div>
+
+
                     </div>
 
-                    <div class="texto2">
-                        <p class="p1">Direccion: *</p>
-                        <input class="campos" type="text" required>
-                        <p class="p1">Usuario: *</p>
-                        <input class="campos" type="text"  required>
-                        <p class="p1">Contraseña: *</p>
-                        <input class="campos" type="text"  required>
-                         <button class="btn-registrarse" onclick="alert('Registro gurdado'); location = '../index.html' " >Registrarse</button>
-                    </br>
-                </br>
-            </br>
-            </div>
-           
+                    <button type="submit" class="btn-registrarse" >Registrarse</button>
+                    <center> <a href="http://localhost/ABP_requeriminto/index.html">¿Ya tienes cuenta?</a> </center>
+                </div>
         </div>
-    </section>
+    </form>
 </body>
 </html>
