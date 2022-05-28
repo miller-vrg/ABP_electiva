@@ -1,167 +1,108 @@
-
 :root{
     --color-primary: #0099ff;
     --fondo: rgba(255,255,255,0.8);
 }
+
 body{
     font-family: 'Quicksand', sans-serif;
-    width:100%;
+    width:90%;
     height:100vh;
     margin:0 auto;
     background-size: cover;
     background-repeat: no-repeat;
     background-image: url(../img/fondo-2.jpg);
     background-position: 50% 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 
 .container{
-    width:100%;
-    height:100%;
-    display: grid;
-    place-items: center;
-    overflow: hidden;
-}
-
-.todo{
-    margin:0;
-    width:90%;
-    height:50%;
-    display:flex;
+    display: flex;
     border-radius: 10px;
     align-items: center;
     border: 1px solid var(--color-primary);
     box-shadow: 0 2px 5px #2E85E6;
     background: var(--fondo);
     overflow: hidden;
-}
-
-.img{
-    margin:0;
-    width:90%;
-    height:70vh;
+    width: 1300px;
+    max-width: 800px;
+ 
 
 }
 
-div img{
-    width: 100%;
-    height:50vh;
-    overflow: hidden;
+img{
+    width: 300px;
+    object-fit: cover;
+    height: 600px;
 
 }
 
-.datos{
-    margin:0;
-    padding: 2%;
-    width:50%;
-    height:60vh;
+
+a{
+    border: none;
+    text-decoration:none;
+}
+
+.form{
     display: flex;
     flex-direction: column;
-    justify-content:space-around;
-    overflow: hidden;
+    margin-left: 20px;
 }
 
-.texto1{
-    margin:0;
-    width:100%;
-    height: 90%;
-    justify-content: flex-end;
-    margin:0;
-  
-}
-.texto2{
-    margin:0;
-    width:100%;
-    height: 90%;
-    justify-content: flex-end;
+.campos{
+    overflow: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 200px);
 }
 
-
-.p1{
-    font-size: 16px;
-    font-weight: bold;
-}
-
-input{
-    width:90%;
-    height:8%;
-    border-radius: 7px;
-    border:1px solid var(--color-primary);
-    box-shadow: 0px 0px 2.5px 0 var(--color-primary);
-}
-
-.btn-registrarse{
-    margin:0;
-    width:90%;
-    font-weight: bold;
-    border:none;
-    border-radius: 7px;
-    background:var(--color-primary);
-    width: 100%;
-    height:30%;
-}
-
-.btn-registrarse:hover{
-    border:1px solid var(--color-primary);
-    background:#ffffff;
-    color:var(--color-primary);
-    font-weight: bold;
-}
-
-
-@media (min-width: 640px){
-
-.datos{
-    margin-top: 10%;
-    justify-content:space-between;
-}
-
-
-    .todo{
-        width:80%;
-        height:90%;
+    .campo{
+        overflow-y: auto;
+        margin-left: 10px;
+        margin-right: 10px;
+        display: flex;
+        flex-direction: column;
         border-radius: 10px;
+        
+       
+    } 
+
+    .campo input{
+        border-radius: 10px;
+        padding: 10px;
         border: 1px solid var(--color-primary);
-        overflow: hidden;
-    }
-    div img{
-        width: 100%;
-        height:90vh;
+        box-shadow: 0 2px 5px #2E85E6;
     }
 
-}
-
-
-@media (min-width: 1200px){
-
-    .todo{
-        width:60%;
-        height:60%;
+    
+    .btn-registrarse:hover{
+       background: white;
+       color: #2E85E6;
+        transition: 0.25s;
+         border: solid 0.5px #2E85E6;
     }
-    div img{
-        width: 90%;
-        height:70vh;
-    }
-
-    .texto1{
-        margin:0;
+    
+    .btn-registrarse:active{
+       background: white;
+       color: #2E85E6;
+        border: solid 0.5px #2E85E6;
+        transform: scale(.9);
     }
 
     .btn-registrarse{
-        margin-top:19%;
-        width: 92%;
-        height:9%;
+        transition: 0.25s;
+        border:none;
+        outline: none;
+        border-radius: 10px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        background: #2E85E6;
+        color: white;
+        font-weight: bold;
+        margin: 10px;
     }
-}
 
-@media (min-height:640px) {
-
-    .texto1,.texto2{
-        margin-top:6%;
-    }
-
-     .btn-registrarse{
-          height:100%;
-      }
-}
 
