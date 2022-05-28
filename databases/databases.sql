@@ -29,6 +29,7 @@ CREATE TABLE `medicos` (
   `edad` int(11) NOT NULL,
   `telefono` varchar(12) NOT NULL,
   `direccion` varchar(100) NOT NULL,
+  'especializacion'  varchar(100) NOT NULL,
   `email` varchar(100) NOT NULL,
   PRIMARY KEY (`user`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
