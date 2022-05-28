@@ -20,30 +20,32 @@ function llenar(){
     AND id_medico = medicos.user
     AND id_citas = citas.id;";
 
-$rows = mysqli_query($conexion,$sql);
+    $rows = mysqli_query($conexion,$sql);
 
-if(mysqli_num_rows($rows) > 0 ){
-    $tabla = "";
-    $con = 1;
-    
-    while($data = mysqli_fetch_assoc($rows)){
+    if(mysqli_num_rows($rows) > 0 ){
 
-        $tablas += "<tr>
-                        <td>$con</td>
-                        <td>".$data['medicos.name']." ".$data['medicos.apellidos']."</td>
-                        <td>".$data['tipo']."</td>
-                        <td>".$data['fecha_cita']."</td>
-                        <td>".$data['fecha_registro']."</td>
-                    </tr>";
-        $con ++;
-        }
+        $tabla = "";
+        $con = 1;
+        
+        while($data = mysqli_fetch_assoc($rows)){
 
-        echo $tabla;
+            $tablas += "<tr>
+                            <td>$con</td>
+                            <td>".$data['medicos.name']." ".$data['medicos.apellidos']."</td>
+                            <td>".$data['tipo']."</td>
+                            <td>".$data['fecha_cita']."</td>
+                            <td>".$data['fecha_registro']."</td>
+                        </tr>";
+            $con ++;
+            }
 
-    header("location: ../page/home-usuario.php");
-}else{
- echo "<script>alert('error al cargar registro');</script>";
-}
+            echo $tabla;
+
+        header("location: ../page/home-usuario.php");
+        
+    }else{
+        echo "<script>alert('error al cargar registro');</script>";
+    }
 
 }
 
