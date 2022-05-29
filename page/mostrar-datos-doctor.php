@@ -7,6 +7,12 @@ $espe = $_SESSION['especi'];
 $edad = $_SESSION['edad'];
 $telefono = $_SESSION['telefono'];
 
+$sql = "SELECT * FROM `citas`";
+
+$row = mysqli_query($conexion, $sql);
+
+
+
 ?>
 
 <!DOCTYPE html>
@@ -43,7 +49,10 @@ $telefono = $_SESSION['telefono'];
               <button class="btn-editar" onclick="location='./edit.php'"> Editar </button>
             </div>
         <div class="table">
-            <table class="default" BORDER CELLPADDING=10 CELLSPACING=0>
+
+            <table class="default" BORDER CELLPADDING=10 CELLSPACING=0 >
+
+
 
                 <tr>
               
@@ -55,298 +64,37 @@ $telefono = $_SESSION['telefono'];
               
                 </tr>
               
-                <tr>
-              
-                  <td>1</td>
-              
-                  <td></td>
-              
-                  <td></td>
 
-                  <td></td>
+                <?php 
+                
+                  foreach ($row as $valor){
 
-                  <td id="btns"><button name="accion" value="correcto"><img src="../icons/marca-de-verificacion.png" alt="Correcto"></button></button></ion-icon>
-                <button name="accion" value="correcto"><img src="../icons/cancelar.png" alt="Correcto"></button>
+                    echo '<tr>
               
-                </tr>
-              
-                <tr  >
-              
-                  <td>2</td>
-              
-                  <td></td>
-              
-                  <td></td>
+                    <td>'. $valor['id'].' </td>
+                
+                    <td>'. $valor['id_user'].' </td>
+                
+                    <td>'.  explode(" ", $valor['fecha_cita'])[0].' </td>
+  
+                    <td>'.  explode(" ", $valor['fecha_cita'])[1].' </td>
 
-                  <td></td>
+                    <td id="btns">
+                     <button name="accion" value="correcto"><img src="../icons/marca-de-verificacion.png" alt="Correcto"></button></button></ion-icon>
+                     <button name="accion" value="correcto"><img src="../icons/cancelar.png" alt="Correcto"></button>
+                    </td>
+  
+                
+                  </tr>';
 
-                  <td id="btns"><button name="accion" value="correcto"><img src="../icons/marca-de-verificacion.png" alt="Correcto"></button></button></ion-icon>
-                <button name="accion" value="correcto"><img src="../icons/cancelar.png" alt="Correcto"></button>
-              
-                </tr>
-              
-                <tr  >
-              
-                  <td>3</td>
-              
-                  <td></td>
-              
-                  <td></td>
 
-                  <td></td>
+                  }
 
-                  <td id="btns"><button name="accion" value="correcto"><img src="../icons/marca-de-verificacion.png" alt="Correcto"></button></button></ion-icon>
-                <button name="accion" value="correcto"><img src="../icons/cancelar.png" alt="Correcto"></button>
+                ?>
+                
               
-                </tr>
               
-                <tr  >
-              
-                  <td>4</td>
-              
-                  <td></td>
-              
-                  <td></td>
-
-                  <td></td>
-
-                  <td id="btns"><button name="accion" value=""><img src="../icons/marca-de-verificacion.png" alt="Correcto"></button></ion-icon>
-                <button name="accion" value="correcto"><img src="../icons/cancelar.png" alt="Correcto"></button>
-                  
-                </tr>
-              
-                <tr  >
-              
-                  <td>5</td>
-              
-                  <td></td>
-              
-                  <td></td>
-
-                  <td></td>
-
-                  <td id="btns"><button name="accion" value="correcto"><img src="../icons/marca-de-verificacion.png" alt="Correcto"></button></button></ion-icon>
-                <button name="accion" value="correcto"><img src="../icons/cancelar.png" alt="Correcto"></button>
-              
-                </tr>
-                <tr  >
-              
-                  <td>6</td>
-              
-                  <td></td>
-              
-                  <td></td>
-
-                  <td></td>
-
-                  <td id="btns"><button name="accion" value="correcto"><img src="../icons/marca-de-verificacion.png" alt="Correcto"></button></button></ion-icon>
-                <button name="accion" value="correcto"><img src="../icons/cancelar.png" alt="Correcto"></button>
-              
-                </tr>
-                <tr  >
-              
-                  <td>7</td>
-              
-                  <td></td>
-              
-                  <td></td>
-
-                  <td></td>
-
-                  <td id="btns"><button name="accion" value="correcto"><img src="../icons/marca-de-verificacion.png" alt="Correcto"></button></button></ion-icon>
-                <button name="accion" value="correcto"><img src="../icons/cancelar.png" alt="Correcto"></button>
-              
-                </tr>
-                <tr  >
-              
-                  <td>8</td>
-              
-                  <td></td>
-              
-                  <td></td>
-
-                  <td></td>
-
-                  <td id="btns"><button name="accion" value="correcto"><img src="../icons/marca-de-verificacion.png" alt="Correcto"></button></button></ion-icon>
-                <button name="accion" value="correcto"><img src="../icons/cancelar.png" alt="Correcto"></button>
-              
-                </tr>
-                <tr  >
-              
-                  <td>9</td>
-              
-                  <td></td>
-              
-                  <td></td>
-
-                  <td></td>
-
-                  <td id="btns"><button name="accion" value="correcto"><img src="../icons/marca-de-verificacion.png" alt="Correcto"></button></button></ion-icon>
-                <button name="accion" value="correcto"><img src="../icons/cancelar.png" alt="Correcto"></button>
-              
-                </tr>
-                <tr  >
-              
-                  <td>10</td>
-              
-                  <td></td>
-              
-                  <td></td>
-
-                  <td></td>
-
-                  <td id="btns"><button name="accion" value="correcto"><img src="../icons/marca-de-verificacion.png" alt="Correcto"></button></button></ion-icon>
-                <button name="accion" value="correcto"><img src="../icons/cancelar.png" alt="Correcto"></button>
-              
-                </tr>
-
-                <tr  >
-              
-                  <td>11</td>
-              
-                  <td></td>
-              
-                  <td></td>
-
-                  <td></td>
-
-                  <td id="btns"><button name="accion" value="correcto"><img src="../icons/marca-de-verificacion.png" alt="Correcto"></button></button></ion-icon>
-                <button name="accion" value="correcto"><img src="../icons/cancelar.png" alt="Correcto"></button>
-              
-                </tr>
-              
-                <tr  >
-              
-                  <td>12</td>
-              
-                  <td></td>
-              
-                  <td></td>
-
-                  <td></td>
-
-                  <td id="btns"><button name="accion" value="correcto"><img src="../icons/marca-de-verificacion.png" alt="Correcto"></button></button></ion-icon>
-                <button name="accion" value="correcto"><img src="../icons/cancelar.png" alt="Correcto"></button>
-              
-                </tr>
-              
-                <tr  >
-              
-                  <td>13</td>
-              
-                  <td></td>
-              
-                  <td></td>
-
-                  <td></td>
-
-                  <td id="btns"><button name="accion" value="correcto"><img src="../icons/marca-de-verificacion.png" alt="Correcto"></button></button></ion-icon>
-                <button name="accion" value="correcto"><img src="../icons/cancelar.png" alt="Correcto"></button>
-              
-                </tr>
-              
-                <tr  >
-              
-                  <td>14</td>
-              
-                  <td></td>
-              
-                  <td></td>
-
-                  <td></td>
-
-                  <td id="btns"><button name="accion" value="correcto"><img src="../icons/marca-de-verificacion.png" alt="Correcto"></button></button></ion-icon>
-                <button name="accion" value="correcto"><img src="../icons/cancelar.png" alt="Correcto"></button>
-              
-                </tr>
-              
-                <tr  >
-              
-                  <td>15</td>
-              
-                  <td></td>
-              
-                  <td></td>
-
-                  <td></td>
-
-                  <td id="btns"><button name="accion" value="correcto"><img src="../icons/marca-de-verificacion.png" alt="Correcto"></button></button></ion-icon>
-                <button name="accion" value="correcto"><img src="../icons/cancelar.png" alt="Correcto"></button>
-              
-                </tr>
-                <tr  >
-              
-                  <td>16</td>
-              
-                  <td></td>
-              
-                  <td></td>
-
-                  <td></td>
-
-                  <td id="btns"><button name="accion" value="correcto"><img src="../icons/marca-de-verificacion.png" alt="Correcto"></button></button></ion-icon>
-                <button name="accion" value="correcto"><img src="../icons/cancelar.png" alt="Correcto"></button>
-              
-                </tr>
-                <tr  >
-              
-                  <td>17</td>
-              
-                  <td></td>
-              
-                  <td></td>
-
-                  <td></td>
-
-                  <td id="btns"><button name="accion" value="correcto"><img src="../icons/marca-de-verificacion.png" alt="Correcto"></button></button></ion-icon>
-                <button name="accion" value="correcto"><img src="../icons/cancelar.png" alt="Correcto"></button>
-              
-                </tr>
-                <tr  >
-              
-                  <td>18</td>
-              
-                  <td></td>
-              
-                  <td></td>
-
-                  <td></td>
-
-                  <td id="btns"><button name="accion" value="correcto"><img src="../icons/marca-de-verificacion.png" alt="Correcto"></button></button></ion-icon>
-                <button name="accion" value="correcto"><img src="../icons/cancelar.png" alt="Correcto"></button>
-              
-                </tr>
-                <tr  >
-              
-                  <td>19</td>
-              
-                  <td></td>
-              
-                  <td></td>
-
-                  <td></td>
-
-                  <td id="btns"><button name="accion" value="correcto"><img src="../icons/marca-de-verificacion.png" alt="Correcto"></button></button></ion-icon>
-                <button name="accion" value="correcto"><img src="../icons/cancelar.png" alt="Correcto"></button>
-              
-                </tr>
-                <tr  >
-              
-                  <td>20</td>
-              
-                  <td></td>
-              
-                  <td></td>
-
-                  <td></td>
-
-                  <td id="btns"><button name="accion" value="correcto"><img src="../icons/marca-de-verificacion.png" alt="Correcto"></button></button></ion-icon>
-                <button name="accion" value="correcto"><img src="../icons/cancelar.png" alt="Correcto"></button>
-              
-                </tr>
-              
-              
-              </table>
+            </table>
 
         </div>
 
