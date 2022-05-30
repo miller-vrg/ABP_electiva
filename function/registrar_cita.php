@@ -24,8 +24,8 @@ if(mysqli_query($conexion, $sql)){
 
 
     $sql ="INSERT INTO registros
-    (fecha_registro, id_citas, estado)
-    VALUES(current_timestamp(), $ultimo_id , 'Pendiente');";
+    (fecha_registro, id_citas)
+    VALUES(current_timestamp(), $ultimo_id );";
 
     if(mysqli_query($conexion, $sql)){
         echo "<script>

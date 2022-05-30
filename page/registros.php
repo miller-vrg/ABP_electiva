@@ -1,42 +1,40 @@
 <?php
 session_start();
 require_once "../databases/conexion_db.php";
-$user = $_SESSION['user'];
-
 $tipo = $_SESSION['tipo'];
 if($tipo == null){
     header("location: ../");
 }
+$user = $_SESSION['user'];
+echo "5 - {$user} ";
+$sql ="";
 
 function llenar(){
 
-    $sql = "SELECT medicos.name,
-    medicos.apellidos, 
-    tipo, 
-    fecha_cita, 
-    fecha_registro,
-    estado,
-    citas.id, 
-    id_citas,
-    id_user,
-    id_medico
-    FROM medicos, citas, registros
-    WHERE id_user = '$user'
-    AND id_medico = medicos.user
-    AND id_citas = citas.id;";
+    $sql = "SELECT name,
+            apellidos, 
+            tipo, 
+            fecha_cita, 
+            fecha_registro,
+            estado
+            FROM citas, registros,medicos
+            WHERE id_user = {$user}  
+            AND id_citas = citas.id
+            GROUP BY fecha_registro;";
 
+   echo "24 - {$user} ";
     $rows = mysqli_query($conexion,$sql);
-
+    echo "26";
     if(mysqli_num_rows($rows) > 0 ){
 
         $tabla = "";
         $con = 1;
-        
+        $data ;
         while($data = mysqli_fetch_assoc($rows)){
 
-            $tablas += "<tr>
+            $tabla += "<tr>
                             <td>$con</td>
-                            <td>".$data['medicos.name']." ".$data['medicos.apellidos']."</td>
+                            <td>".$data['name']." ".$data['apellidos']."</td>
                             <td>".$data['tipo']."</td>
                             <td>".$data['fecha_cita']."</td>
                             <td>".$data['fecha_registro']."</td>
@@ -44,12 +42,22 @@ function llenar(){
             $con ++;
             }
 
-            echo $tabla;
+            if($data != null){
+                echo $tabla;
+            }else{
+              
+                echo "<script>
+                        alert('Usted no tiene registros');
+                     </script>";
+            }
+            
 
         header("location: ../page/home-usuario.php");
         
     }else{
-        echo "<script>alert('error al cargar registro');</script>";
+        echo "<script>
+                alert('error al cargar registro');
+            </script>";
     }
 
 }
@@ -67,9 +75,6 @@ function llenar(){
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="../css/style-registros.css">
-    <script>
-        onload:print();
-    </script>
 </head>
 <body>
     <section class = "container">
@@ -82,7 +87,7 @@ function llenar(){
                       <th class="encabezado" id="hora">Fecha cita</th>
                       <th class="encabezado" id="asignacion">Asignación</th>
                   </tr>
-                  <?= llenar();?>
+                  <?php llenar(); ?>
               </table>
           </form>
     </section>
