@@ -54,19 +54,19 @@ $direccion = $_SESSION['direccion'];
                     <img src="../img/general.jpg" alt="Medico General">
                     <h5>Medico general</h5>
                     <p>El médico general tiene la responsabilidad de ofrecer una atención integral al paciente. Esto hace que tenga un total conocimiento del historial médico y clínico del paciente.</p>
-                    <button type="submit" name="accion" value="general"><h5>Agendar</h5> <img src="../icons/fecha-derecha.svg" alt="flecha"></button>
+                    <button type="submit" name="accion" value="General"><h5>Agendar</h5> <img src="../icons/fecha-derecha.svg" alt="flecha"></button>
                 </div>
                 <div class="tarjeta t2">
                     <img src="../img/ginecologo.jpg" alt="Ginecologo">
                     <h5>Ginecologia</h5>
                     <p>La finalidad de la revisión ginecológica es la prevención y detección precoz de alteraciones de los órganos reproductores.</p>
-                    <button type="submit" name="accion" value="ginecologo" ><h5>Agendar</h5><img src="../icons/fecha-derecha.svg" alt="flecha"></button>
+                    <button type="submit" name="accion" value="Ginecologia" ><h5>Agendar</h5><img src="../icons/fecha-derecha.svg" alt="flecha"></button>
                 </div>
                 <div class="tarjeta t2">
                     <img src="../img/pediatria.jpg" alt="Pediatria">
                     <h5>Pediatria</h5>
                     <p>Ofrecer consejos para evitar enfermedades y lesiones. Proporcionar cuidado anticipado y adecuado en caso de enfermedades graves para evitar que progresen.</p>
-                    <button type="submit" name="accion" value="pediatra" ><h5>Agendar</h5> <img src="../icons/fecha-derecha.svg" alt="flecha"></button>
+                    <button type="submit" name="accion" value="Pediatria" ><h5>Agendar</h5> <img src="../icons/fecha-derecha.svg" alt="flecha"></button>
                 </div>
                 <div class="tarjeta t2" >
                     <img src="../img/odontologia.jpg" alt="Odontologia">

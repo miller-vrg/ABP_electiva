@@ -3,9 +3,8 @@ session_start();
 require_once "../databases/conexion_db.php";
 
 @$ex = $_SESSION['especializacion'];
-
 $sql = "SELECT * FROM medicos
-WHERE lower(especializacion)  like '%$ex%'";
+WHERE lower(especializacion)  like '%$ex%';";
 
 $row = mysqli_query($conexion, $sql);
 
@@ -30,14 +29,6 @@ if (mysqli_num_rows($row) > 0) {
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/style-listado.css">
-    <Style>
-        .retroceso {
-            font-size: 80px;
-            border-radius: 5mm;
-            background-color: blue;
-            border: 2mm black solid;
-        }
-    </Style>
 </head>
 
 <body>
@@ -45,8 +36,8 @@ if (mysqli_num_rows($row) > 0) {
         <table class="t" BORDER CELLPADDING=10 CELLSPACING=0>
 
             <?php
-
-            if (@$data["user"] != null) {
+            
+            if (@$data != null) {
                 date_default_timezone_set("America/Bogota");
                 @$fecha = date("d-m-Y");
                 @$fecha_au  = date("d-m-Y");
@@ -70,7 +61,7 @@ if (mysqli_num_rows($row) > 0) {
                     <td class="c">Hora</td>
                     <td class="c b"></td>
                     </tr>
-tt;
+                    tt;
                 }
 
                 if(isset($_REQUEST["au"])){
@@ -108,9 +99,9 @@ pp;
                     }
                 }
             } else {
-                echo "<H1>No hay medico " . $_SESSION['especializacion'] . " disponible</H1>";
+                
+                echo "<H1>No hay medico disponible para " . $_SESSION['especializacion'] . " </H1>";
             }
-
             ?>
 
             <!--  -->
@@ -123,8 +114,8 @@ pp;
 
             for ($p = 1; $p <= 30; $p++) {
                 echo <<<oo
-                <a href="listado.php?au=$p"><button class="chid">$p</button></a>
-oo;
+                <a href="listado.php?au=$p"><button class="chid"></button></a>
+                oo;
             }
         } else {
             echo "<a href='home-usuario.php'><input class='retroceso' type='button' value='Atras'></a>";

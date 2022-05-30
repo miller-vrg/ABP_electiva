@@ -43,7 +43,7 @@ if(mysqli_num_rows($rows) > 0 ){
             $_SESSION['email'] = $data['email'];
             $_SESSION['telefono'] = $data['telefono'];
             $_SESSION['direccion'] = $data['direccion'];
-            $_SESSION['especi'] = $data['especializacion'];
+           // $_SESSION['especializacion'] = $data['especializacion'];
             }
     
         header("location: ../page/mostrar-datos-doctor.php");
