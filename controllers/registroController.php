@@ -12,6 +12,10 @@ $direccion = $_REQUEST['direccion'];
 $email = $_REQUEST['email'];
 $password = $_REQUEST['password'];
 
+$tipo = $_SESSION['tipo'];
+if($tipo == null){
+    header("location: ../");
+}
 
   $sql = "INSERT INTO `usuarios` (`user`, `password`, `name`, `apellidos`, `edad`, `cc`, `telefono`, `direccion`, `email`) VALUES ('".$user."', '".$password."', '".$name."', '".$apellidos."', '".$edad."', '".$cc."', '".$telefono."', '".$direccion."', '".$email."');";
 

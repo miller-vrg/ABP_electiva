@@ -8,6 +8,10 @@ $telefono = $_REQUEST['telefono'];
 $direccion = $_REQUEST['direccion'];
 $email = $_REQUEST['email'];
 
+if($tipo == null){
+    header("location: ../");
+}
+
 echo "<script>
   var r = confirm('desea guardar los cambios?');
   if( r == false){

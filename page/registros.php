@@ -3,6 +3,11 @@ session_start();
 require_once "../databases/conexion_db.php";
 $user = $_SESSION['user'];
 
+$tipo = $_SESSION['tipo'];
+if($tipo == null){
+    header("location: ../");
+}
+
 function llenar(){
 
     $sql = "SELECT medicos.name,

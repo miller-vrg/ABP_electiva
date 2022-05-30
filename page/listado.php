@@ -3,20 +3,32 @@ session_start();
 require_once "../databases/conexion_db.php";
 
 @$ex = $_SESSION['especializacion'];
-$sql = "SELECT * FROM medicos
-WHERE lower(especializacion)  like '%$ex%';";
+@$user = $_SESSION['user'];
 
-$row = mysqli_query($conexion, $sql);
+$sql = "SELECT tipo,estado FROM citas,registros
+WHERE ( tipo = '".$ex."' AND id_user = '".$user."' AND id_citas = citas.id) 
+ AND ( estado = 'Pendiente' OR estado = 'Asistida' );";
+ $row = mysqli_query($conexion, $sql);
 
-@$data = "";
-
-if (mysqli_num_rows($row) > 0) {
-    $data = mysqli_fetch_assoc($row);
-    // echo $data["apellidos"];
-    //  echo $data["name"];
-    //  echo $data["user"];
+if(mysqli_num_rows($row) > 0){
+    echo "<script>
+            alert('Usted ya tiene una cita asignada');
+            location='../page/home-usuario.php';
+         </script>";
+}else{
+    $sql = "SELECT * FROM medicos
+    WHERE lower(especializacion)  like '%$ex%';";
+    $row = mysqli_query($conexion, $sql);
+    
+    @$data = "";
+    
+    if (mysqli_num_rows($row) > 0) {
+        $data = mysqli_fetch_assoc($row);
+        // echo $data["apellidos"];
+        //  echo $data["name"];
+        //  echo $data["user"];
+    }
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -55,11 +67,11 @@ if (mysqli_num_rows($row) > 0) {
                 } else {
                     echo <<<tt
                     <tr>
-                    <td class="c">N°</td>
-                    <td class="c">Medico</td>
-                    <td class="c">Fecha</td>
-                    <td class="c">Hora</td>
-                    <td class="c b"></td>
+                    <th class="c">N°</th>
+                    <th class="c">Medico</th>
+                    <th class="c">Fecha</th>
+                    <th class="c">Hora</th>
+                    <th class="c b"></th>
                     </tr>
                     tt;
                 }
@@ -79,7 +91,7 @@ if (mysqli_num_rows($row) > 0) {
 
                     $print = <<<pp
                     <tr>
-                        <th class="n">{$i}</th>
+                        <td class="n">{$i}</td>
                         <td>{$data["name"]} {$data["apellidos"]}</td>
                         <td>{$fecha}</td>
                         <td>{$hora}</td>
@@ -108,11 +120,14 @@ pp;
         </table>
     </form>
     <div class="dias">
+        <p><b>Dias: </b></p>
         <?php
 
-        if (@$data["user"] != null) {
+        if (@$data != null) {
 
             for ($p = 1; $p <= 30; $p++) {
+                
+
                 echo <<<oo
                 <a href="listado.php?au=$p"><button class="chid"></button></a>
                 oo;

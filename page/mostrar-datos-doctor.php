@@ -7,6 +7,11 @@ $espe = $_SESSION['especi'];
 $edad = $_SESSION['edad'];
 $telefono = $_SESSION['telefono'];
 
+$tipo = $_SESSION['tipo'];
+if($tipo == null){
+    header("location: ../");
+}
+
 $sql = "SELECT * FROM `citas`";
 
 $row = mysqli_query($conexion, $sql);

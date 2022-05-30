@@ -6,7 +6,9 @@ require_once "../databases/conexion_db.php";
  $tipo= $_SESSION['especializacion'];
  $fecha =$_REQUEST['fh'];
 
-
+ if($tipo == null){
+     header("location: ../");
+ }
 
  @$fecha = date($fecha);
  @$fecha = strtotime($fecha);
@@ -27,10 +29,20 @@ if(mysqli_query($conexion, $sql)){
 
     if(mysqli_query($conexion, $sql)){
         echo "<script>
-                 alert('Usuario o contraseña invalido');
+                 alert('Registro guardado con exito');
+                 location='../page/home-usuario.php'
               </script>";
-        header("Location: ../page/home-usuario.php");
+    }else{
+        echo "<script>
+        alert('Error al guardar el registro');
+        location='../page/home-usuario.php'
+     </script>";
     }
+}else{
+    echo "<script>
+    alert('Error al guardar el cita');
+    location='../page/home-usuario.php'
+ </script>";
 }
 
 

@@ -2,15 +2,16 @@
 :root{
     --color-primary: #0099ff;
     --color-secundario: #0039BC; 
-    --fondo: rgb(255,255,255,0.6)
+    --fondo: rgb(255,255,255,0.9);
 }
 body{
     margin:0;
     font-family: 'Quicksand', sans-serif;
     width:100%;
     height:100vh;
-    display:grid;
-    place-items: center;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
     background-size: cover;
     background-repeat: no-repeat;
     background-image: url(../img/fondo-2.jpg);
@@ -19,33 +20,37 @@ body{
 
 .contenedor{
     margin: 0;
+    margin-top: 2%;
     width: 90%;
-    height: 60%;
-    padding:2%;
+    height: 80%;
+    border-radius: 5mm;
     display: flex;
-    justify-content: center;
+    background: var(--fondo);
+    border-radius: 18px;
+    box-shadow: 0px 0px 5px var(--color-primary);
     overflow: auto;
-    
 }
 
 .dias{
-    margin: 20px;
-    margin-top:-10%;
-    margin-left: -5%;
-    width: 70%;
+    margin: 0;
+    margin-top: 5px;
+    width: 90%;
     display: flex;
-    justify-content: center;
-    flex-direction: row;
-    gap: 10px;
-    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    background: var(--fondo);
+    border-radius: 8px;
+    box-shadow: 1px 2px 5px var(--color-primary);
 
 }
 
 .chid{
     flex-grow: 1;
-    width: 20px;
-    height: 30px;
+    width: 30px;
+    height: 4.5vh;
     background-color: #0039BC;
+    border:none;
+    border-radius: 8px;
 }
 .chid:hover{
     border: 1px solid rgb(236, 112, 99);
@@ -58,8 +63,6 @@ body{
 }
 
 .t{
-    
-    margin:0;
     width: 100%;
     height: 100%;
     border-radius: 5mm;
