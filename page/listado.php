@@ -18,8 +18,6 @@ if (mysqli_num_rows($row) > 0) {
     //  echo $data["user"];
 }
 
-
-
 ?>
 
 <!DOCTYPE html>

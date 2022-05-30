@@ -29,22 +29,22 @@
                                                 
                         <div class="campo">
                             <p class="p1">Edad: *</p>
-                            <input name="edad" class="campos" type="number"  required>
+                            <input name="edad" min="1" class="campos" type="number"  required>
                         </div>
                         
                         <div class="campo">
                             <p class="p1">Telefono: *</p>
-                            <input name="telefono" class="campos" type="number"  required>
+                            <input name="telefono" min="30000000" max="3499999999" class="campos" type="number"  required>
                         </div>
                         
                         <div class="campo">
                             <p class="p1">Cedula: *</p>
-                            <input name="cc" class="campos" type="text"  required>
+                            <input name="cc" class="campos" type="number" min="800000" max="9999999999" required>
                         </div>
                                                 
                         <div class="campo">
-                            <p class="p1">Emial: *</p>
-                            <input name="email" class="campos" type="email"  required>
+                            <p class="p1">Email: *</p>
+                            <input id="email" class="campos" name="email" type="email"  required>
                         </div>
 
                         <div class="campo">
@@ -54,7 +54,7 @@
 
                         <div class="campo">
                             <p class="p1">Usuario: *</p>
-                            <input name="user" class="campos" type="text"  required>
+                            <input name="user" class="campos" type="text" minlength="5" maxlength="10"  required>
                         </div>
 
                         <div class="campo">
@@ -69,5 +69,8 @@
                 </div>
         </div>
     </form>
+    <script src="../js/function.js">
+
+    </script>
 </body>
 </html>
