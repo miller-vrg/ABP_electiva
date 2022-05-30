@@ -125,7 +125,7 @@ pp;
 
             for ($p = 1; $p <= 30; $p++) {
                 echo <<<oo
-                <a href="listado.php?au=$p"><button class="chid"></button></a>
+                <a href="listado.php?au=$p"><button class="chid">$p</button></a>
 oo;
             }
         } else {
