@@ -24,9 +24,9 @@ if(mysqli_num_rows($row) > 0){
     
     if (mysqli_num_rows($row) > 0) {
         $data = mysqli_fetch_assoc($row);
-        // echo $data["apellidos"];
-        //  echo $data["name"];
-        //  echo $data["user"];
+         echo $data["apellidos"];
+          echo $data["name"];
+          echo $data["user"];
     }
 }
 ?>
@@ -73,7 +73,7 @@ if(mysqli_num_rows($row) > 0){
                     <th class="c">Hora</th>
                     <th class="c b"></th>
                     </tr>
-                    tt;
+tt;
                 }
 
                 if(isset($_REQUEST["au"])){
@@ -115,31 +115,26 @@ pp;
                 echo "<H1>No hay medico disponible para " . $_SESSION['especializacion'] . " </H1>";
             }
             ?>
-
-            <!--  -->
         </table>
     </form>
     <div class="dias">
         <p><b>Dias: </b></p>
         <?php
-
         if (@$data != null) {
 
             for ($p = 1; $p <= 30; $p++) {
-                
-
+                 
+                $aux3 = strtotime($fecha_au."+ $p days");
+                $aux3 = date('d',$aux3);
                 echo <<<oo
-                <a href="listado.php?au=$p"><button class="chid"></button></a>
-                oo;
+                <a href="listado.php?au=$p"><button class="chid">$aux3</button></a>
+oo;
             }
         } else {
             echo "<a href='home-usuario.php'><input class='retroceso' type='button' value='Atras'></a>";
         }
         ?>
-
-
     </div>
-
 </body>
 
 </html>
