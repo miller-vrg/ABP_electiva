@@ -3,8 +3,10 @@ session_start();
 require_once "../databases/conexion_db.php";
 
 $name = $_SESSION['name'];
-$espe = $_SESSION['especi'];
+$espe = $_SESSION['espe'];
 $edad = $_SESSION['edad'];
+$user = $_SESSION['user'];
+
 $telefono = $_SESSION['telefono'];
 
 $tipo = $_SESSION['tipo'];
@@ -12,7 +14,9 @@ if($tipo == null){
     header("location: ../");
 }
 
-$sql = "SELECT * FROM `citas`";
+$sql = "SELECT * FROM citas,registros
+WHERE ( estado = 'Pendiente' AND id_medico = '{$user}' )
+AND citas.id  = registros.id";
 
 $row = mysqli_query($conexion, $sql);
 
@@ -71,12 +75,12 @@ $row = mysqli_query($conexion, $sql);
               
 
                 <?php 
-                
+                 $con = 0;
                   foreach ($row as $valor){
-
+                    $con++;
                     echo '<tr>
               
-                    <td>'. $valor['id'].' </td>
+                    <td>'. $con.' </td>
                 
                     <td>'. $valor['id_user'].' </td>
                 

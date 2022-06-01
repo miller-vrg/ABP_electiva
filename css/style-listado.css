@@ -51,6 +51,14 @@ body{
     background-color: #0039BC;
     border:none;
     border-radius: 8px;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+}
+
+.chid p{
+    color:white;
+    font-weight: bold;
 }
 .chid:hover{
     border: 1px solid rgb(236, 112, 99);

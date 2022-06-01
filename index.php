@@ -1,3 +1,8 @@
+<?php
+session_start();
+$_SESSION['tipo'] = null;
+
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>

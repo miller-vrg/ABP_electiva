@@ -22,6 +22,7 @@ if(mysqli_num_rows($rows) > 0 ){
         $_SESSION['email'] = $data['email'];
         $_SESSION['telefono'] = $data['telefono'];
         $_SESSION['direccion'] = $data['direccion'];
+        $_SESSION['cc'] = $data['cc'];
         }
 
     header("location: ../page/home-usuario.php");
@@ -43,7 +44,7 @@ if(mysqli_num_rows($rows) > 0 ){
             $_SESSION['email'] = $data['email'];
             $_SESSION['telefono'] = $data['telefono'];
             $_SESSION['direccion'] = $data['direccion'];
-           // $_SESSION['especializacion'] = $data['especializacion'];
+           $_SESSION['espe'] = $data['especializacion'];
             }
     
         header("location: ../page/mostrar-datos-doctor.php");

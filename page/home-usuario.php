@@ -32,6 +32,7 @@ $direccion = $_SESSION['direccion'];
         <div class="btn-nav">
              <img class="calendario" src="../icons/calendario.png" onclick="location='citas.html'" >
              <img class="registros" src="../icons/verificacion.png" onclick="location='registros.php'; " >
+             <img class="exit" src="../icons/logout.png" onclick="location='../' " >
         </div>
     </nav>
     <section class="container">

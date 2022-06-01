@@ -1,66 +1,25 @@
 <?php
 session_start();
 require_once "../databases/conexion_db.php";
+
 $tipo = $_SESSION['tipo'];
 if($tipo == null){
     header("location: ../");
 }
 $user = $_SESSION['user'];
-echo "5 - {$user} ";
-$sql ="";
 
-function llenar(){
+$con = 1;
 
-    $sql = "SELECT name,
-            apellidos, 
-            tipo, 
-            fecha_cita, 
-            fecha_registro,
-            estado
-            FROM citas, registros,medicos
-            WHERE id_user = {$user}  
-            AND id_citas = citas.id
-            GROUP BY fecha_registro;";
-
-   echo "24 - {$user} ";
-    $rows = mysqli_query($conexion,$sql);
-    echo "26";
-    if(mysqli_num_rows($rows) > 0 ){
-
-        $tabla = "";
-        $con = 1;
-        $data ;
-        while($data = mysqli_fetch_assoc($rows)){
-
-            $tabla += "<tr>
-                            <td>$con</td>
-                            <td>".$data['name']." ".$data['apellidos']."</td>
-                            <td>".$data['tipo']."</td>
-                            <td>".$data['fecha_cita']."</td>
-                            <td>".$data['fecha_registro']."</td>
-                        </tr>";
-            $con ++;
-            }
-
-            if($data != null){
-                echo $tabla;
-            }else{
-              
-                echo "<script>
-                        alert('Usted no tiene registros');
-                     </script>";
-            }
-            
-
-        header("location: ../page/home-usuario.php");
-        
-    }else{
-        echo "<script>
-                alert('error al cargar registro');
-            </script>";
-    }
-
-}
+$sql = "SELECT DISTINCTROW  name,
+apellidos, 
+tipo, 
+fecha_cita, 
+fecha_registro,
+estado
+FROM citas, registros,medicos
+WHERE id_user = 'juan-123'  
+AND id_citas = citas.id
+AND id_medico = medicos.`user`;";
 
 ?>
 
@@ -76,8 +35,9 @@ function llenar(){
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="../css/style-registros.css">
 </head>
-<body>
+<body onload="print()">
     <section class = "container">
+        <p>Reporte del señor(a) <b><?= $_SESSION['name']?></b>, identificado con el numero de cc: <b><?= $_SESSION['cc']?></b></p>
     <table BORDER CELLPADDING=10 CELLSPACING=0>
                   <tr>
                       <th class="encabezado" id="n">N°</th>
@@ -87,7 +47,39 @@ function llenar(){
                       <th class="encabezado" id="hora">Fecha cita</th>
                       <th class="encabezado" id="asignacion">Asignación</th>
                   </tr>
-                  <?php llenar(); ?>
+                  <?php 
+                      $rows = mysqli_query($conexion,$sql);
+                      if(mysqli_num_rows($rows) > 0 ){
+                  
+                          while($data = mysqli_fetch_assoc($rows)){
+                  
+                        echo <<<pp
+                                <tr>
+                                <td>{$con}</td>
+                                <td>{$data['name']} {$data['apellidos']}</td>
+                                <td>{$data['tipo']}</td>
+                                <td>{$data['estado']}</td>
+                                 <td>{$data['fecha_registro']}</td>
+                                <td>{$data['fecha_cita']}</td>
+                               
+                                </tr>
+pp ;                                                                                    
+                              $con ++;
+                              }
+                              if($con < 1){
+                                
+                                  echo "<script>
+                                          alert('Usted no tiene registros');
+                                          location = '../page/home-usuario.php';
+                                       </script>";
+                              }
+                          
+                      }else{
+                          echo "<script>
+                                  alert('error al cargar registro');
+                              </script>";
+                      }
+                  ?>
               </table>
           </form>
     </section>

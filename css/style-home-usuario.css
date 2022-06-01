@@ -25,29 +25,34 @@ nav{
     display: flex;
     align-items: center;
     justify-content: flex-end;
-
 }
 
-.btn-nav{
+nav .btn-nav{
     margin:0;
-    margin-right: 2%;
-    width:25%;
-    height: 80%;
+    margin-left: 2%;
+    width: 10%;
+    height: 70%;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-.btn-nav .calendario{
+nav .btn-nav .exit{
     margin:0;
-    width:45%;
+    width:25%;
     height:100%;
 }
 
-.btn-nav .registros{
+nav .btn-nav .registros{
     margin:0;
-    width:45%;
-    height:95%;
+    width:25%;
+    height:100%;
+}
+
+nav .btn-nav .calendario{
+    margin:0;
+    width:25%;
+    height:100%;
 }
 
 .btn-nav img:hover{

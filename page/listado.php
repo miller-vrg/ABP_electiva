@@ -24,9 +24,6 @@ if(mysqli_num_rows($row) > 0){
     
     if (mysqli_num_rows($row) > 0) {
         $data = mysqli_fetch_assoc($row);
-         echo $data["apellidos"];
-          echo $data["name"];
-          echo $data["user"];
     }
 }
 ?>
@@ -127,7 +124,7 @@ pp;
                 $aux3 = strtotime($fecha_au."+ $p days");
                 $aux3 = date('d',$aux3);
                 echo <<<oo
-                <a href="listado.php?au=$p"><button class="chid">$aux3</button></a>
+                <a href="listado.php?au=$p"><button class="chid"><p>$aux3</p></button></a>
 oo;
             }
         } else {
