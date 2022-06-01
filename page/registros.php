@@ -17,7 +17,7 @@ fecha_cita,
 fecha_registro,
 estado
 FROM citas, registros,medicos
-WHERE id_user = 'juan-123'  
+WHERE id_user = '".$user."'  
 AND id_citas = citas.id
 AND id_medico = medicos.`user`;";
 
