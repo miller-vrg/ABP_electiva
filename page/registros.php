@@ -81,7 +81,6 @@ pp ;
                       }
                   ?>
               </table>
-          </form>
     </section>
 </body>
 </html>
