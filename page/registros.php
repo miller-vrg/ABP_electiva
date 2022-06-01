@@ -61,8 +61,8 @@ AND id_medico = medicos.`user`;";
                                 <td>{$data['name']} {$data['apellidos']}</td>
                                 <td>{$data['tipo']}</td>
                                 <td>{$data['estado']}</td>
-                                 <td>{$data['fecha_registro']}</td>
-                                <td>{$data['fecha_cita']}</td>
+                                 <td>{$data['fecha_cita']}</td>
+                                <td>{$data['fecha_registro']}</td>
                                
                                 </tr>
 pp;

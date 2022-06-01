@@ -80,7 +80,7 @@ tt;
                     $fecha = $fecha_au;
                     $fecha_au = date("d-m-Y");
                 }
-
+900000
                 for ($i = 1; $i <= 36; $i++) {
 
                     @$auxi = strtotime('+20 minute', $auxi);
