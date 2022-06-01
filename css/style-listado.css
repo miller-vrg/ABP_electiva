@@ -48,7 +48,7 @@ body{
     flex-grow: 1;
     width: 30px;
     height: 4.5vh;
-    background-color: #0039BC;
+    background: var(--color-secundario);
     border:none;
     border-radius: 8px;
     display: flex;
@@ -61,8 +61,12 @@ body{
     font-weight: bold;
 }
 .chid:hover{
-    border: 1px solid rgb(236, 112, 99);
+    border: 1px solid var(--color-secundario);
     background: #f9f9fa ;
+}
+
+.chid p:hover{
+    color:var(--color-secundario);
 }
 
 .b{
@@ -115,8 +119,7 @@ body{
 }
 
 .n{
-    width: 5%;
-
+    width: 12px;
 }
 .retroceso {
     font-size: 80px;

@@ -51,7 +51,7 @@ if(mysqli_num_rows($rows) > 0 ){
     }else{
              echo "<script>
                  alert('Usuario o contraseña invalido');
-                 location = '../index.html';
+                 location = '../';
               </script>";
     }
 }
